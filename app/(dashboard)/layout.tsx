@@ -17,6 +17,6 @@ export default function RootLayout({
             <>{children}</>
         );
     } else {
-        return <PageNotFound />;
+        return  <PageNotFound />;
     }
 }

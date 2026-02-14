@@ -2,14 +2,23 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { HiOutlineBookmark, HiOutlineHome, HiOutlineArrowLeft } from "react-icons/hi";
+import { HiOutlineHome, HiOutlineArrowLeft } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function NotFound() {
   const router = useRouter();
+  const [show,setShow] = useState(false);
 
+  useEffect(()=>{
+    const time = setTimeout(()=>setShow(true),3000);
+    return ()=>clearTimeout(time);
+  },[]);
+
+
+if(!show) return null;
   return (
     <div className="min-h-screen pt-40 bg-gradient-to-b from-slate-50 to-white dark:from-gray-950 dark:to-gray-900 flex items-center justify-center px-6">
       {/* Background Decoration */}
